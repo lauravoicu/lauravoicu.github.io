@@ -4765,7 +4765,6 @@ a {
   transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
   background-color: transparent;
   color: inherit;
-  text-align: inherit;
   height: auto;
 }
 .u-form-horizontal label,
@@ -5478,6 +5477,9 @@ a {
   position: relative;
   font-size: 1rem;
   height: auto !important;
+}
+.u-form-group {
+  text-align: start;
 }
 .u-btn-submit {
   display: inline-block;
@@ -17909,10 +17911,8 @@ a.pswp__share--download:hover {
   justify-content: space-between;
 }
 .u-cart-blocks-container {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-gap: 30px;
   position: relative;
 }
@@ -31198,58 +31198,34 @@ a.u-link.u-text-hover-grey-90:hover {
 }
 
 .u-header .u-sheet-1 {
-  min-height: 74px;
+  min-height: 92px;
 }
 
-.u-header .u-search-1 {
-  width: 200px;
-  min-height: 38px;
-  margin: 18px auto 0 9px;
+.u-header .u-icon-1 {
+  height: 50px;
+  width: 50px;
+  background-image: none;
+  margin: 21px 49px 0 auto;
 }
 
-.u-header .u-menu-1 {
-  font-family: size-14;
-  margin: -32px auto 18px -52px;
-}
-
-.u-header .u-nav-1 {
-  font-size: 1rem;
-}
-
-.u-header .u-nav-2 {
-  font-size: 1rem;
+.u-header .u-icon-2 {
+  height: 50px;
+  width: 50px;
+  background-image: none;
+  margin: -50px 140px 21px auto;
 }
 @media (max-width: 1199px) {
-  .u-header .u-search-1 {
-    height: auto;
+  .u-header .u-icon-1 {
+    margin-right: 49px;
   }
 
-  .u-header .u-menu-1 {
-    width: auto;
-    margin-left: 0;
-  }
-}
-@media (max-width: 991px) {
-  .u-header .u-search-1 {
-    margin-right: 58px;
+  .u-header .u-icon-2 {
+    margin-right: 140px;
   }
 }
 
-@media (max-width: 575px) {
-  .u-header .u-sheet-1 {
-    min-height: 118px;
-  }
 
-  .u-header .u-search-1 {
-    margin-right: initial;
-    margin-left: initial;
-    width: auto;
-  }
 
-  .u-header .u-menu-1 {
-    margin-left: 158px;
-  }
-}
 .u-footer {
   background-image: none;
 }
