@@ -2038,7 +2038,19 @@
 .u-section-7 .u-text-1 {
   font-size: 3rem;
   font-weight: 700;
-  margin: 0 251px 0 0;
+  margin: 52px 251px 0 0;
+}
+
+.u-section-7 .u-icon-1 {
+  height: 64px;
+  width: 64px;
+  margin: 30px auto 0 98px;
+}
+
+.u-section-7 .u-icon-2 {
+  height: 64px;
+  width: 64px;
+  margin: -64px auto 0 0;
 }
 
 .u-section-7 .u-layout-cell-2 {
