@@ -387,7 +387,7 @@
 .u-section-1-4 .u-image-1 {
   min-height: 600px;
   pointer-events: auto;
-  background-image: url("images/57e2d1464c5baa14f6da8c7dda793678153bdee757596c48732f73d29445c05ab0_1280.jpg");
+  background-image: url("images/53e0dd444f54b108f5d084609629317e113fdce15b4c704f75267dd49749c45b_1280.jpg");
   background-position: 50% 50%;
 }
 
@@ -416,6 +416,10 @@
 }
 
 .u-section-1-4 .u-btn-1 {
+  padding: 0;
+}
+
+.u-section-1-4 .u-btn-2 {
   background-image: none;
   border-style: none none solid;
   text-transform: uppercase;
