@@ -31200,19 +31200,15 @@ a.u-link.u-text-hover-grey-90:hover {
 .u-header .u-sheet-1 {
   min-height: 17px;
 }
-@media (max-width: 1199px) {
-  .u-header .u-sheet-1 {
-    min-height: 521px;
-  }
-}
+
 @media (max-width: 991px) {
   .u-header .u-sheet-1 {
-    min-height: 697px;
+    min-height: 19px;
   }
 }
 @media (max-width: 767px) {
   .u-header .u-sheet-1 {
-    min-height: 1331px;
+    min-height: 17px;
   }
 }
 @media (max-width: 575px) {
