@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="page_type" content="np-template-header-footer-from-plugin">
+    <title>Post 2</title>
+    <link rel="stylesheet" href="nicepage.css" media="screen">
+<link rel="stylesheet" href="Post-2.css" media="screen">
+    <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
+    <meta name="generator" content="Nicepage 3.14.0, nicepage.com">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
+    <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": "Laura Voicu",
+		"url": "index.html"
+}</script>
+    <meta property="og:title" content="Post 2">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#40bcdf">
+    <link rel="canonical" href="index.html">
+    <meta property="og:url" content="index.html">
+  </head>
+  <body class="u-body u-overlap"><header class="u-align-left u-black u-clearfix u-header u-header" id="sec-bc4c"><div class="u-clearfix u-sheet u-sheet-1"></div></header>
+    <section class="u-clearfix u-section-1" id="sec-8305">
+      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
+          <div class="u-layout">
+            <div class="u-layout-row">
+              <div class="u-container-style u-layout-cell u-left-cell u-size-30 u-layout-cell-1">
+                <div class="u-container-layout u-valign-middle u-container-layout-1">
+                  <h2 class="u-custom-font u-font-oswald u-text u-text-1">How to Build an Image Classifier with Very Little Data<br>
+                  </h2>
+                  <p class="u-text u-text-2">Hi! My name is Laura, and this is my blog. My opinions are my own, and you are free to challenge them, like them or share them.</p>
+                </div>
+              </div>
+              <div class="u-container-style u-image u-layout-cell u-right-cell u-size-30 u-image-1" data-image-width="1280" data-image-height="853">
+                <div class="u-container-layout u-container-layout-2"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="u-align-center u-clearfix u-section-2" id="sec-cc97">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <h3 class="u-text u-text-1">How to Build an Image Classifier with Very Little Data</h3>
+        <p class="u-align-left u-text u-text-2">I originally did this project as part of "<a href="https://www.extensionschool.ch/applied-data-science-machine-learning" class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-5-dark-2 u-btn-1" target="_blank">Applied Data Science: Machine Learning</a>" Program at the <a href="https://www.extensionschool.ch" class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-5-dark-2 u-btn-2" target="_blank">EPFL Extension School</a>, and revisited it recently trying to improve the model.<br>
+          <br>One of the projects in the program was to build an image classifier using the Swissroads data
+set which contains a couple of hundreds of images of vehicles found in the EPFL
+- Lausanne area categorized as cars, trucks, vans, bikes, motorcycles and
+others (280 training samples, 140 validation samples). The explicit goals for this
+project were one: to test and compare traditional ML classifiers, using transfer learning to get around the problem of very very little data and two: to build a convolutional neural network from scratch trained on the raw pixels ( of the 280 samples).&nbsp;The choice of the machine learning models was given: logistic
+regression, decision trees, random forests, support vector machines and
+k-nearest neighbors plus convolutional neural networks.&nbsp;<br>
+        </p>
+        <img src="images/ml_models.jpg" alt="" class="u-image u-image-default u-image-1" data-image-width="1708" data-image-height="842">
+      </div>
+    </section>
+    <section class="u-clearfix u-section-3" id="sec-cced">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-align-left u-text u-text-1">So, for the next part, I will briefly present one of these algorithms and then go a bit deeper into the more challenging part of training the conv net. We only have 280 training samples, and we know that machine learning models typically require a lot of data to perform well. What if we could do more than just get more data? What if we could use the knowledge of another model trained on more data to help us with our problem? This is the idea behind transfer learning.MobileNet V2 developed at Google is one such example of pre-trained models. MobileNet V2 was trained on the ImageNet dataset, a large dataset with a wide variety of categories including different vehicle types, consisting of 1.4 M images and 1000 classes. As is always the case in machine learning, it is hard to form rules that are generally applicable, but here are some guidelines on when transfer learning might be used: (1) There isn't enough labeled training data to train your network from scratch. (2) There already exists a network that is pre-trained on a similar task, which is usually trained on massive amounts of data. (3) Task 1 and task 2 have
+the same input.</p>
+        <img src="images/transfer1.jpg" alt="" class="u-image u-image-default u-image-1" data-image-width="1860" data-image-height="770">
+        <p class="u-align-left u-text u-text-2">How does transfer
+learning work exactly? There are many approaches to transfer learning (and a lot of good articles out there), but the
+approach I’ve used here is to use deep learning to discover the best
+representation of our problem, which means finding the most important features.
+This approach is mostly used in computer vision because it decreases
+computation time and makes it more suitable for traditional algorithms, as
+well. Deep learning models are
+layered architectures that learn different features at different layers. These
+layers are then finally connected to a last layer (usually a fully connected
+layer, in the case of supervised learning) to get the final output. This
+layered architecture allows us to utilize a pre-trained network without its
+final layer as a fixed feature extractor for other tasks.</p>
+      </div>
+    </section>
+    <section class="u-align-left u-clearfix u-section-4" id="sec-1db2">
+      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <div class="fr-view u-clearfix u-rich-text u-text u-text-1">
+          <p style="text-align: left;">Deep learning models are layered architectures that learn different features at different layers. These layers are then finally connected to a last layer (usually a fully connected layer, in the case of supervised learning) to get the final output. This layered architecture allows us to utilize a pre-trained network without its final layer as a fixed feature extractor for other tasks. This is one of the most widely utilized methods of performing transfer learning using deep neural networks.</p>
+          <p style="text-align: left;">
+            <img align="center" style="width: 547px;" class="fr-dii fr-fic fr-fil" src="images/transfer_learning.jpg" width="570">
+            <br style="box-sizing: border-box; -webkit-user-drag: none !important; user-select: text !important; outline: 0px !important; cursor: url(&quot;images/5.svg&quot;) 10 10, auto; pointer-events: auto !important; color: rgb(17, 17, 17); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;">This way we not need to (re)train the entire model. The base convolutional network already contains features that are generically useful for classifying pictures. However, the final, classification part of the pretrained model is specific to the original classification task, and subsequently specific to the set of classes on which the model was trained.<span style="line-height: 2.0;">&nbsp;</span>
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="u-clearfix u-section-5" id="sec-251c">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="u-expanded-width u-table u-table-responsive u-table-1">
+          <table class="u-table-entity u-table-entity-1">
+            <colgroup>
+              <col width="33.3%">
+              <col width="33.3%">
+              <col width="33.400000000000006%">
+            </colgroup>
+            <thead class="u-table-header u-table-header-1">
+              <tr style="height: 22px;">
+                <th class="u-border-2 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">Classifier</th>
+                <th class="u-border-2 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">Optimization</th>
+                <th class="u-border-2 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">Accuracy</th>
+              </tr>
+            </thead>
+            <tbody class="u-table-body">
+              <tr style="height: 75px;">
+                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">Dummy classifier (most-frequent)&nbsp;</td>
+                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">None</td>
+                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">0.207</td>
+              </tr>
+              <tr style="height: 75px;">
+                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">Logistic Regression&nbsp;&nbsp;</td>
+                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">Grid search for optimal regularization strength</td>
+                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">0.878</td>
+              </tr>
+              <tr style="height: 75px;">
+                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">k-Nearest Neighbors&nbsp;&nbsp;</td>
+                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">Grid search for optimal k (number of neighbors), weights, distance types</td>
+                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">0.880</td>
+              </tr>
+              <tr style="height: 76px;">
+                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">Linear SVM</td>
+                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">PCA to reduce the number of features and retain 90+% of the variance&nbsp;<br>Grid search for optimal regularization parameter&nbsp;
+                </td>
+                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">0.863</td>
+              </tr>
+              <tr style="height: 76px;">
+                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">(Simple) Decision Trees&nbsp;</td>
+                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">Grid search for optimal tree depth (minimal)&nbsp;</td>
+                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">0.840</td>
+              </tr>
+              <tr style="height: 76px;">
+                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">Random Forests&nbsp;</td>
+                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">Randomized search for optimal number of estimators (minimal)&nbsp;</td>
+                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">0.880</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+    <section class="u-align-left u-clearfix u-section-6" id="sec-82ee">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="fr-view u-clearfix u-rich-text u-text u-text-1">
+          <p style="text-align: left;">I was most excited about the convolutional neural networks part. The challenging part of using convolutional neural networks in practice is how to design model architectures because there is no recipe on the number of layers to be used, so this is a trial-and-error process. But there is no need to start greenfield either and we can always get an idea of where to start by studying successful applications. Perhaps the first widely known and successful application of convolutional neural networks was LeNet-5, first published by Yann LeCun in 1998. It is a long paper, but his architecture proposes a pattern of a convolutional and pooling layers, repeated two and a half times before the output feature maps are flattened and fed to the fully connected layers for the final prediction. Throughout the years the model architectures have evolved going deeper and more complex, but some architecture best practices remain:</p>
+          <ul>
+            <li>Fixed-sized input images.</li>
+            <li>Distinct feature extraction and classifier parts of the architecture.</li>
+            <li>Group convolutional and pooling layers into blocks.</li>
+            <li>Repetition of convolutional-pooling blocks in the architecture.</li>
+            <li>Increase in the number of filters with the depth of the network.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="u-align-left u-clearfix u-section-7" id="sec-7580">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="fr-view u-clearfix u-rich-text u-text u-text-1">
+          <p>The architecture that I chose build upon these best practices with the following modifications:</p>
+          <p style="text-align: left;">
+            <span style="line-height: 2.0;">
+              <img align="center" style="width: 790px;" class="fr-dii fr-fic fr-fil" src="images/model_arch.jpg" width="570">
+            </span>
+          </p>
+          <ul style="box-sizing: border-box; margin-top: 20px; margin-bottom: 20px; padding-left: 20px; list-style-position: inside; color: rgb(17, 17, 17); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial; -webkit-user-drag: element !important; user-select: text !important; outline: 0px !important; cursor: text !important; pointer-events: auto !important;">
+            <li style="box-sizing: border-box; -webkit-user-drag: element !important; user-select: text !important; outline: 0px !important; cursor: text !important; pointer-events: auto !important;">Similar architecture to the one that Yann LeCun advocated for image classification (with the exception of ReLU).</li>
+            <li style="box-sizing: border-box; -webkit-user-drag: element !important; user-select: text !important; outline: 0px !important; cursor: text !important; pointer-events: auto !important;">Four blocks of convolutional and pooling layer (I used max pooling).</li>
+            <li style="box-sizing: border-box; -webkit-user-drag: element !important; user-select: text !important; outline: 0px !important; cursor: text !important; pointer-events: auto !important;">Increasing numbers of filters (32, 64, 128, 256) with small 3x3 values (odd values since they need to be centered on the pixel being convolved)</li>
+            <li style="box-sizing: border-box; -webkit-user-drag: element !important; user-select: text !important; outline: 0px !important; cursor: text !important; pointer-events: auto !important;">Flatten the learned features to one long vector and pass through a fully connected layer before the output layer used to make a prediction.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="u-clearfix u-section-8" id="sec-2d45">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-text u-text-default u-text-1">TO BE CONTINUED&gt;&gt;</p>
+      </div>
+    </section>
+    
+    
+    <footer class="u-align-left u-clearfix u-footer u-grey-80 u-footer" id="sec-1b5c"><div class="u-clearfix u-sheet u-sheet-1"></div></footer>
+    <section class="u-backlink u-clearfix u-grey-80">
+      <a class="u-link" href="https://nicepage.com/website-templates" target="_blank">
+        <span>Web Templates</span>
+      </a>
+      <p class="u-text">
+        <span>created with</span>
+      </p>
+      <a class="u-link" href="https://nicepage.com/static-site-generator" target="_blank">
+        <span>Static Site Generator</span>
+      </a>. 
+    </section>
+  </body>
+</html>

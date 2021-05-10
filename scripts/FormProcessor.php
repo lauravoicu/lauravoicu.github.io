@@ -140,11 +140,12 @@ class FormProcessor
     {
         $emailFrom = $form['email']['from'];
         $formEmail = $emailFrom ? $emailFrom : ((array_key_exists('email', $_REQUEST) && !empty($_REQUEST['email'])) ? $this->_cleanupEmail($_REQUEST['email']) : '');
+        $headers = $this->_getEmailHeaders($formEmail);
 
         $to = $form['email']['to'];
         $subject = $form['subject'];
-        $message = $this->_getEmailBody($subject, $form['email_message'], $form['fields']);
-        $headers = $this->_getEmailHeaders($to, $formEmail);
+        $sendIpAddress = isset($form['sendIpAddress']) ? $form['sendIpAddress'] : true;
+        $message = $this->_getEmailBody($subject, $form['email_message'], $form['fields'], $sendIpAddress);
 
         $sent = @mail($to, $subject, $message, $headers);
 
@@ -158,15 +159,15 @@ class FormProcessor
         echo $this->_getFormResponse(true, $success_data);
     }
 
-    private function _getEmailHeaders($toEmail, $formEmail) {
-        $headers = 'From: ' . $toEmail . PHP_EOL;
+    private function _getEmailHeaders($formEmail) {
+        $headers = 'From: ' . $formEmail . PHP_EOL;
         $headers .= 'Reply-To: ' . $formEmail . PHP_EOL;
         $headers .= 'X-Mailer: PHP/' . phpversion() . PHP_EOL;
         $headers .= 'Content-type: text/html; charset=utf-8' . PHP_EOL;
         return $headers;
     }
 
-    private function _getEmailBody($subject, $emailMsg, $fields) {
+    private function _getEmailBody($subject, $emailMsg, $fields, $sendIpAddress) {
         $message = '<html>';
         $message .= '<head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><title>' . $this->_encodeValue($subject) . '</title></head>';
         $styles = <<<STYLES
@@ -222,11 +223,15 @@ STYLES;
 
         $message .= '</tbody></table>';
         $message .= '</td></tr>';
-        $message .= '<tr align="center" style="padding:0 0 22px">';
-        $message .= '<td style="vertical-align:top; font-family:Helvetica, Arial, Verdana, sans-serif; padding:11px" valign="top">';
-        $message .= '<div style="color:#918f8d; font-size:12px">' . sprintf($this->_messages['submitted_from'], $this->_encodeValue($_SERVER['SERVER_NAME'])) . '</div>';
-        $message .= '<div style="color:#918f8d; font-size:12px">' . sprintf($this->_messages['submitted_by'], $this->_encodeValue($_SERVER['REMOTE_ADDR'])) . '</div>';
-        $message .= '</td></tr>';
+
+        if ($sendIpAddress) {
+            $message .= '<tr align="center" style="padding:0 0 22px">';
+            $message .= '<td style="vertical-align:top; font-family:Helvetica, Arial, Verdana, sans-serif; padding:11px" valign="top">';
+            $message .= '<div style="color:#918f8d; font-size:12px">' . sprintf($this->_messages['submitted_from'], $this->_encodeValue($_SERVER['SERVER_NAME'])) . '</div>';
+            $message .= '<div style="color:#918f8d; font-size:12px">' . sprintf($this->_messages['submitted_by'], $this->_encodeValue($_SERVER['REMOTE_ADDR'])) . '</div>';
+            $message .= '</td></tr>';
+        }
+
         $message .= '</tbody></table>';
         $message .= '</td></tr></tbody></table>';
         $message .= '</td></tr></tbody></table>';

@@ -6,6 +6,7 @@ $form = array(
     'subject' => 'New Form Submission',
     'email_message' => 'You have a new form submission',
     'success_redirect' => '',
+    'sendIpAddress' => true,
     'email' => array(
     'from' => '',
     'to' => 'laura.voicu@me.com'
