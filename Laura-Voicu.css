@@ -392,17 +392,15 @@
 }
 
 @media (max-width: 1199px) {
-  .u-section-3 {
-    min-height: 655px;
-  }
-
   .u-section-3 .u-sheet-1 {
-    min-height: 655px;
+    min-height: 720px;
   }
 
   .u-section-3 .u-layout-wrap-1 {
-    width: 940px;
-    margin-left: 100px;
+    margin-top: 58px;
+    margin-right: initial;
+    margin-left: initial;
+    width: auto;
   }
 
   .u-section-3 .u-layout-cell-1 {
@@ -444,18 +442,15 @@
 }
 
 @media (max-width: 991px) {
-  .u-section-3 {
-    min-height: 1443px;
-  }
-
   .u-section-3 .u-sheet-1 {
-    min-height: 855px;
+    min-height: 853px;
   }
 
   .u-section-3 .u-layout-wrap-1 {
-    width: 720px;
     margin-bottom: 0;
-    margin-left: 0;
+    width: auto;
+    margin-right: initial;
+    margin-left: initial;
   }
 
   .u-section-3 .u-layout-cell-1 {
@@ -500,17 +495,8 @@
 }
 
 @media (max-width: 767px) {
-  .u-section-3 {
-    min-height: 1139px;
-  }
-
   .u-section-3 .u-sheet-1 {
-    min-height: 881px;
-  }
-
-  .u-section-3 .u-layout-wrap-1 {
-    width: 540px;
-    margin-bottom: 20px;
+    min-height: 859px;
   }
 
   .u-section-3 .u-layout-cell-1 {
@@ -582,8 +568,10 @@
   }
 
   .u-section-3 .u-layout-wrap-1 {
-    width: 340px;
     margin-bottom: 10px;
+    width: auto;
+    margin-right: initial;
+    margin-left: initial;
   }
 
   .u-section-3 .u-layout-cell-1 {
@@ -982,6 +970,10 @@
   .u-section-4 .u-group-1 {
     width: 199px;
     min-height: 319px;
+    margin-top: 20px;
+    margin-right: auto;
+    margin-left: 0;
+    margin-bottom: initial;
   }
 
   .u-section-4 .u-container-layout-2 {
@@ -991,6 +983,10 @@
   .u-section-4 .u-group-2 {
     width: 199px;
     min-height: 319px;
+    margin-top: 20px;
+    margin-right: auto;
+    margin-left: 0;
+    margin-bottom: initial;
   }
 
   .u-section-4 .u-container-layout-4 {
@@ -1000,6 +996,10 @@
   .u-section-4 .u-group-3 {
     width: 199px;
     min-height: 319px;
+    margin-top: 20px;
+    margin-right: auto;
+    margin-left: 0;
+    margin-bottom: initial;
   }
 
   .u-section-4 .u-container-layout-6 {
@@ -1009,6 +1009,10 @@
   .u-section-4 .u-group-4 {
     width: 199px;
     min-height: 319px;
+    margin-top: 20px;
+    margin-right: auto;
+    margin-left: 0;
+    margin-bottom: initial;
   }
 
   .u-section-4 .u-container-layout-8 {
@@ -1018,6 +1022,10 @@
   .u-section-4 .u-group-4 {
     width: 199px;
     min-height: 319px;
+    margin-top: 20px;
+    margin-right: auto;
+    margin-left: 0;
+    margin-bottom: initial;
   }
 
   .u-section-4 .u-container-layout-8 {
@@ -1027,6 +1035,10 @@
   .u-section-4 .u-group-4 {
     width: 199px;
     min-height: 319px;
+    margin-top: 20px;
+    margin-right: auto;
+    margin-left: 0;
+    margin-bottom: initial;
   }
 
   .u-section-4 .u-container-layout-8 {
@@ -1082,6 +1094,7 @@
   .u-section-4 .u-group-1 {
     width: 215px;
     min-height: 173px;
+    margin: -73px 0 0 auto;
   }
 
   .u-section-4 .u-icon-3 {
@@ -1091,6 +1104,7 @@
   .u-section-4 .u-group-2 {
     width: 215px;
     min-height: 173px;
+    margin: -73px 0 0 auto;
   }
 
   .u-section-4 .u-icon-5 {
@@ -1100,6 +1114,7 @@
   .u-section-4 .u-group-3 {
     width: 215px;
     min-height: 173px;
+    margin: -73px 0 0 auto;
   }
 
   .u-section-4 .u-icon-7 {
@@ -1109,6 +1124,7 @@
   .u-section-4 .u-group-4 {
     width: 215px;
     min-height: 173px;
+    margin: -73px 0 0 auto;
   }
 
   .u-section-4 .u-icon-7 {
@@ -1118,6 +1134,7 @@
   .u-section-4 .u-group-4 {
     width: 215px;
     min-height: 173px;
+    margin: -73px 0 0 auto;
   }
 
   .u-section-4 .u-icon-7 {
@@ -1127,6 +1144,7 @@
   .u-section-4 .u-group-4 {
     width: 215px;
     min-height: 173px;
+    margin: -73px 0 0 auto;
   }
 
   .u-section-4 .u-text-15 {
@@ -1743,11 +1761,11 @@
 
 @media (max-width: 1199px) {
   .u-section-6 .u-sheet-1 {
-    min-height: 961px;
+    min-height: 926px;
   }
 
   .u-section-6 .u-layout-wrap-1 {
-    margin-top: -178px;
+    margin-top: 25px;
     margin-right: initial;
     margin-left: initial;
   }
@@ -1771,7 +1789,7 @@
 
   .u-section-6 .u-text-3 {
     width: auto;
-    margin: -416px 0 60px 16px;
+    margin: -619px 0 60px 16px;
   }
 }
 

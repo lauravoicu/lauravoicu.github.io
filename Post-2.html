@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="Post-2.css" media="screen">
     <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
-    <meta name="generator" content="Nicepage 3.14.0, nicepage.com">
+    <meta name="generator" content="Nicepage 3.14.1, nicepage.com">
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
     <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700">
     
@@ -43,7 +43,7 @@
             <div class="u-layout-row">
               <div class="u-container-style u-layout-cell u-left-cell u-size-30 u-layout-cell-1">
                 <div class="u-container-layout u-valign-middle u-container-layout-1">
-                  <h2 class="u-custom-font u-font-oswald u-text u-text-1">How to Build an Image Classifier with Very Little Data<br>
+                  <h2 class="u-custom-font u-font-oswald u-text u-text-1">How to Build an Image Classifier with Very Little Data (Part 1)<br>
                   </h2>
                   <p class="u-text u-text-2">Hi! My name is Laura, and this is my blog. My opinions are my own, and you are free to challenge them, like them or share them.</p>
                 </div>
@@ -58,8 +58,8 @@
     </section>
     <section class="u-align-center u-clearfix u-section-2" id="sec-cc97">
       <div class="u-clearfix u-sheet u-sheet-1">
-        <h3 class="u-text u-text-1">How to Build an Image Classifier with Very Little Data</h3>
-        <p class="u-align-left u-text u-text-2">I originally did this project as part of "<a href="https://www.extensionschool.ch/applied-data-science-machine-learning" class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-5-dark-2 u-btn-1" target="_blank">Applied Data Science: Machine Learning</a>" Program at the <a href="https://www.extensionschool.ch" class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-5-dark-2 u-btn-2" target="_blank">EPFL Extension School</a>, and revisited it recently trying to improve the model.<br>
+        <h3 class="u-align-left u-text u-text-1">How to Build an Image Classifier with Very Little Data</h3>
+        <p class="u-align-left u-text u-text-2">This project as part of "<a href="https://www.extensionschool.ch/applied-data-science-machine-learning" class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-5-dark-2 u-btn-1" target="_blank">Applied Data Science: Machine Learning</a>" Program at the <a href="https://www.extensionschool.ch" class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-5-dark-2 u-btn-2" target="_blank">EPFL Extension School</a>. I wasn't very happy with the results I got then, so after some more research and the experience of other projects, I decided to revisit it.<br>
           <br>One of the projects in the program was to build an image classifier using the Swissroads data
 set which contains a couple of hundreds of images of vehicles found in the EPFL
 - Lausanne area categorized as cars, trucks, vans, bikes, motorcycles and
@@ -71,23 +71,33 @@ k-nearest neighbors plus convolutional neural networks.&nbsp;<br>
         <img src="images/ml_models.jpg" alt="" class="u-image u-image-default u-image-1" data-image-width="1708" data-image-height="842">
       </div>
     </section>
-    <section class="u-clearfix u-section-3" id="sec-cced">
+    <section class="u-align-left u-clearfix u-section-3" id="sec-7856">
       <div class="u-clearfix u-sheet u-sheet-1">
-        <p class="u-align-left u-text u-text-1">So, for the next part, I will briefly present one of these algorithms and then go a bit deeper into the more challenging part of training the conv net. We only have 280 training samples, and we know that machine learning models typically require a lot of data to perform well. What if we could do more than just get more data? What if we could use the knowledge of another model trained on more data to help us with our problem? This is the idea behind transfer learning.MobileNet V2 developed at Google is one such example of pre-trained models. MobileNet V2 was trained on the ImageNet dataset, a large dataset with a wide variety of categories including different vehicle types, consisting of 1.4 M images and 1000 classes. As is always the case in machine learning, it is hard to form rules that are generally applicable, but here are some guidelines on when transfer learning might be used: (1) There isn't enough labeled training data to train your network from scratch. (2) There already exists a network that is pre-trained on a similar task, which is usually trained on massive amounts of data. (3) Task 1 and task 2 have
-the same input.</p>
-        <img src="images/transfer1.jpg" alt="" class="u-image u-image-default u-image-1" data-image-width="1860" data-image-height="770">
-        <p class="u-align-left u-text u-text-2">How does transfer
-learning work exactly? There are many approaches to transfer learning (and a lot of good articles out there), but the
-approach I’ve used here is to use deep learning to discover the best
-representation of our problem, which means finding the most important features.
-This approach is mostly used in computer vision because it decreases
-computation time and makes it more suitable for traditional algorithms, as
-well. Deep learning models are
-layered architectures that learn different features at different layers. These
-layers are then finally connected to a last layer (usually a fully connected
-layer, in the case of supervised learning) to get the final output. This
-layered architecture allows us to utilize a pre-trained network without its
-final layer as a fixed feature extractor for other tasks.</p>
+        <div class="fr-view u-clearfix u-rich-text u-text u-text-1">
+          <h2 style="text-align: left;">Transfer Learning</h2>
+          <p style="text-align: left;">
+            <br>
+          </p>
+          <p style="text-align: left;">
+            <span style="line-height: 2.0;">So, for the next part, I will briefly present one of these algorithms and then go a bit deeper into the more challenging part of training the conv net. We only have 280 training samples, and we know that machine learning models typically require a lot of data to perform well. What if we could do more than just get more data? What if we could use the knowledge of another model trained on more data to help us with our problem? This is the idea behind transfer learning.MobileNet V2 developed at Google is one such example of pre-trained models. MobileNet V2 was trained on the ImageNet dataset, a large dataset with a wide variety of categories including different vehicle types, consisting of 1.4 M images and 1000 classes.&nbsp;</span>
+          </p>
+          <p style="text-align: left;">
+            <br>
+          </p>
+          <p style="text-align: left;">
+            <span style="line-height: 2.0;">As is always the case in machine learning, it is hard to form rules that are generally applicable, but here are some guidelines on when transfer learning might be used: (1) There isn't enough labeled training data to&nbsp;<img align="center" style="width: 382px;" class="fr-dii fr-fic fr-fil" src="images/transfer1.jpg" width="570">train your network from scratch. (2) There already exists a network that is pre-trained on a similar task, which is usually trained on massive amounts of data. (3) Task 1 and task 2 have the same input.
+            </span>
+          </p>
+          <p style="text-align: left;">
+            <br>
+          </p>
+          <p style="text-align: left;">
+            <br>
+          </p>
+          <p style="text-align: left;">
+            <span style="line-height: 2.0;">How does transfer learning work exactly? There are many approaches to transfer learning (and a lot of good articles out there), but the approach I’ve used here is to use deep learning to discover the best representation of our problem, which means finding the most important features. This approach is mostly used in computer vision because it decreases computation time and makes it more suitable for traditional algorithms, as well. Deep learning models are layered architectures that learn different features at different layers. These layers are then finally connected to a last layer (usually a fully connected layer, in the case of supervised learning) to get the final output. This layered architecture allows us to utilize a pre-trained network without its final layer as a fixed feature extractor for other tasks.</span>
+          </p>
+        </div>
       </div>
     </section>
     <section class="u-align-left u-clearfix u-section-4" id="sec-1db2">
@@ -96,7 +106,7 @@ final layer as a fixed feature extractor for other tasks.</p>
           <p style="text-align: left;">Deep learning models are layered architectures that learn different features at different layers. These layers are then finally connected to a last layer (usually a fully connected layer, in the case of supervised learning) to get the final output. This layered architecture allows us to utilize a pre-trained network without its final layer as a fixed feature extractor for other tasks. This is one of the most widely utilized methods of performing transfer learning using deep neural networks.</p>
           <p style="text-align: left;">
             <img align="center" style="width: 547px;" class="fr-dii fr-fic fr-fil" src="images/transfer_learning.jpg" width="570">
-            <br style="box-sizing: border-box; -webkit-user-drag: none !important; user-select: text !important; outline: 0px !important; cursor: url(&quot;images/5.svg&quot;) 10 10, auto; pointer-events: auto !important; color: rgb(17, 17, 17); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;">This way we not need to (re)train the entire model. The base convolutional network already contains features that are generically useful for classifying pictures. However, the final, classification part of the pretrained model is specific to the original classification task, and subsequently specific to the set of classes on which the model was trained.<span style="line-height: 2.0;">&nbsp;</span>
+            <br style="box-sizing: border-box; -webkit-user-drag: none !important; user-select: text !important; outline: 0px !important; cursor: url(&quot;images/1.svg&quot;) 10 10, auto; pointer-events: auto !important; color: rgb(17, 17, 17); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;">This way we not need to (re)train the entire model. The base convolutional network already contains features that are generically useful for classifying pictures. However, the final, classification part of the pretrained model is specific to the original classification task, and subsequently specific to the set of classes on which the model was trained.<span style="line-height: 2.0;">&nbsp;</span>
           </p>
         </div>
       </div>
@@ -184,11 +194,20 @@ final layer as a fixed feature extractor for other tasks.</p>
             <li style="box-sizing: border-box; -webkit-user-drag: element !important; user-select: text !important; outline: 0px !important; cursor: text !important; pointer-events: auto !important;">Flatten the learned features to one long vector and pass through a fully connected layer before the output layer used to make a prediction.</li>
           </ul>
         </div>
+        <p class="u-text u-text-2">My original trial using this architecture achieved an accuracy of 0.520. Not bad compared to the dummy-classifier, but pretty dissapointing compared to the other results. Obviously, in was an unfair comparison, since the classical machine learning classifiers took advantage of the features extracted using transfer learning, whereas the convolutional neural networks had to learn the features from the 280 samples.&nbsp;</p>
+        <p class="u-text u-text-3">Check the convolutional neural networks in the second part of this article.</p>
       </div>
     </section>
-    <section class="u-clearfix u-section-8" id="sec-2d45">
-      <div class="u-clearfix u-sheet u-sheet-1">
-        <p class="u-text u-text-default u-text-1">TO BE CONTINUED&gt;&gt;</p>
+    <section class="u-align-left u-clearfix u-section-8" id="sec-daa2">
+      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <div class="fr-view u-clearfix u-rich-text u-text u-text-1">
+          <h2 style="text-align: left;">References:</h2>
+          <p style="text-align: left;">
+            <span style="line-height: 2.0;">
+              <br style="box-sizing: border-box; -webkit-user-drag: none !important; user-select: text !important; outline: 0px !important; cursor: url(&quot;images/1.svg&quot;) 10 10, auto; pointer-events: auto !important; color: rgb(17, 17, 17); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;">- Architecture of LeNet-5 (Yann LeCun) (http://vision.stanford.edu/cs598_spring07/papers/Lecun98.pdf) <br style="box-sizing: border-box; -webkit-user-drag: none !important; user-select: text !important; outline: 0px !important; cursor: url(&quot;images/1.svg&quot;) 10 10, auto; pointer-events: auto !important; color: rgb(17, 17, 17); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;">- Transfer Learning<br style="box-sizing: border-box; -webkit-user-drag: none !important; user-select: text !important; outline: 0px !important; cursor: url(&quot;images/1.svg&quot;) 10 10, auto; pointer-events: auto !important; color: rgb(17, 17, 17); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;">- Mobile Net (https://ai.googleblog.com/2017/06/mobilenets-open-source-models-for.html)
+            </span>
+          </p>
+        </div>
       </div>
     </section>
     

@@ -109,11 +109,11 @@
 }
 
 .u-section-2 .u-text-1 {
-  margin: 81px 101px 0;
+  margin: 81px 0 0;
 }
 
 .u-section-2 .u-text-2 {
-  margin: 81px 104px 60px 98px;
+  margin: 81px 0 60px;
 }
 
 .u-section-2 .u-btn-1 {
@@ -125,27 +125,14 @@
 }
 
 @media (max-width: 1199px) {
-  .u-section-2 .u-text-1 {
-    margin-left: 1px;
-    margin-right: 1px;
-  }
-
   .u-section-2 .u-text-2 {
-    margin-left: 0;
-    margin-right: 2px;
     width: 765px;
   }
 }
 
 @media (max-width: 991px) {
-  .u-section-2 .u-text-1 {
-    margin-left: 0;
-    margin-right: 0;
-  }
-
   .u-section-2 .u-text-2 {
     width: 720px;
-    margin-right: 0;
   }
 }
 
