@@ -412,6 +412,10 @@
   padding: 0;
 }
 
+.u-section-4 .u-btn-3 {
+  padding: 0;
+}
+
 @media (max-width: 1199px) {
   .u-section-4 .u-sheet-1 {
     min-height: 412px;
